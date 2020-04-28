@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View College</title>
+</head>
+<body>
+    <div>
+        <form action="http://localhost:5000/user/view-college/details" method="get">
+            <table>
+                <tr>
+                    <td>College Name</td>
+                    <td>
+                        <select id="college-name" name="college-name">
+                            {% for x in college %}    
+                            <option value="{{x}}">{{x}}</option>
+                            {% endfor %}
+                            </select>      
+                    </td>  
+                </tr>
+            </table>
+            <input type="submit" class="" name="" id="">
+        </form>
+        {% block content %}
+            {% if(ctr == 0) %}
+            {% else %}
+                <table>
+                    {% for i in cutoff %}
+                    <tr>
+                        <td>
+                            {{i[0]}}
+                        </td>
+                        <td>
+                            {{i[1]}}
+                        </td>
+                        <td>
+                            {{i[2]}}
+                        </td>
+                    </tr>
+                    {% endfor %} 
+                </table>
+            {% endif %}
+        {% endblock content %}
+    </div>
+</body>
+</html>

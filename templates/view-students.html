@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Students</title>
+</head>
+<body>
+    <div>
+        <form action="http://localhost:5000/admin/view-students/details" method="get">
+            <table>
+                <tr>
+                    <td>Select Stream</td>
+                    <td>
+                        <select id="branch" name="branch">
+                            {% for x in branch %}    
+                            <option value="{{x}}">{{x}}</option>
+                            {% endfor %}
+                            </select>      
+                    </td>  
+                </tr>
+            </table>
+            <input type="submit" class="" name="" id="">
+        </form>
+        {% block content %}
+            {% if(ctr == 0) %}
+            {% else %}
+                <table>
+                    {% for i in students %}
+                    <tr>
+                        <td>
+                            Name Of the Student
+                        </td>
+                        <td>
+                            {{i[3]}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            College targeted for application
+                        </td>
+                        <td>
+                            {{i[0]}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Marks Scored in PCM
+                        </td>
+                        <td>
+                            {{i[2]}}
+                        </td>
+                    </tr>
+                    {% endfor %} 
+                </table>
+            {% endif %}
+        {% endblock content %}
+    </div>
+</body>
+</html>

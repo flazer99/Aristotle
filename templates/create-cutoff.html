@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Cut-Off</title>
+</head>
+<body>
+    <div>
+        <form action="http://localhost:5000/admin/create-cutoff/details" method="get">
+            <table>
+                <tr>
+                    <td>Select College</td>
+                    <td>
+                        <select id="college" name="college">
+                            {% for x in college %}    
+                            <option value="{{x}}">{{x}}</option>
+                            {% endfor %}
+                            </select>      
+                    </td>  
+                </tr>
+                <tr>
+                    <td>Select Branch</td>
+                    <td>
+                        <select id="branch" name="branch">
+                            {% for y in branch %}    
+                            <option value="{{y}}">{{y}}</option>
+                            {% endfor %}
+                            </select>      
+                    </td>  
+                </tr>
+                <tr>
+                    <td>Add Cut-Off Mark</td>
+                    <td><input type="text" name = "marks"></td>
+                </tr>
+            </table>
+            <input type="submit" class="" name="" id="">
+        </form>
+        <h3>Cut-off Details Entered</h3>
+            {% block content %}
+                {% if(ctr == 0) %}
+                {% else %}
+                <table>
+                <tr>
+                    <td>
+                        College :
+                    </td>
+                    <td>
+                        {{buff[0]}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Branch:
+                    </td>
+                    <td>
+                        {{buff[1]}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Cut-Off:
+                    </td>
+                    <td>
+                        {{buff[2]}}
+                    </td>
+                </tr>
+            </table>
+        {% endif %}
+    {% endblock content %}
+    </div>
+</body>
+</html>

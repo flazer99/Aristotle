@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final List of Selected Students</title>
+</head>
+
+<body>
+    <div>
+        <h3>Final List of Qualified Students</h3>
+        <table>
+            {% for i in students %}
+            <tr>
+                <td>
+                    Name Of the Student
+                </td>
+                <td>
+                    {{i[3]}}
+                </td>
+                <td>
+                    College 
+                </td>
+                <td>
+                    {{i[0]}}
+                </td>
+                <td>
+                    Branch
+                </td>
+                <td>
+                    {{i[1]}}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

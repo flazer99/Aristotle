@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for a College</title>
+</head>
+<body>
+    <div>
+        <form action="http://localhost:5000/user/apply/details" method="get">
+            <table>
+                <tr>
+                    <td>College Name</td>
+                    <td>
+                        <select id="college-name" name="college-name">
+                            {% for x in college %}    
+                            <option value="{{x}}">{{x}}</option>
+                            {% endfor %}
+                            </select>      
+                    </td>  
+                </tr>
+                <tr>
+                    <td>Branch of Preference</td>
+                    <td><input type="text" placeholder="Branch Of Preference" name="branch" id=""></td>
+                </tr>
+                <tr>
+                    <td>Name of the Student</td>
+                    <td><input type="text" placeholder="Name of the Student" name="sname"></td>
+                </tr>
+                <tr>
+                    <td>Marks Scored in PCM</td>
+                    <td><input type="text" placeholder="Marks Scored (PCM)" name="smarks"></td>
+                </tr>
+            </table>
+            <input type="submit" class="" name="" id="">
+        </form>
+</body>
+</html>
