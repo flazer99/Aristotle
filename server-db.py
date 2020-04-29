@@ -309,5 +309,50 @@ def apply_college_details():
         return "Recorded!"
     return "Error"
 
+@app.route("/user/view-cutoff")
+def view_cutoff():
+    try:
+        f = open("cutoff-details","r")
+        res = restructure(f)
+        college = list()
+        branch = list()
+        f.close()
+        
+        for i in res:
+            college.append(i[0])
+            branch.append(i[1])
+        
+        college = list(set(college))
+        branch = list(set(branch))  
+        return render_template('view-current-cutoff.html', college = college, ctr = 0, branch = branch, result = [])
+    except Exception as e:
+        return "The Current Cut-Off list hasn't been released yet!" 
+
+
+@app.route("/user/view-cutoff/details", methods = ["get"])
+def view_cutoff_details():
+    college = request.args.get('college')
+    branch = request.args.get('branch')
+    try:
+        f = open("cutoff-details","r")
+        res = restructure(f)
+        college_list = list()
+        branch_list = list()
+        f.close()
+        
+        query_res = None
+        for i in res:
+            if(college == i[0] and branch == i[1]):
+                query_res = i
+            college_list.append(i[0])
+            branch_list.append(i[1])
+        
+        college_list = list(set(college_list))
+        branch_list = list(set(branch_list))
+
+        return render_template('view-current-cutoff.html', college = college_list, ctr = 1, branch = branch_list, result = query_res)
+    except Exception as e:
+        return "The Current Cut-Off list hasn't been released yet!" 
+
 if(__name__=='__main__'):
     app.run(debug = True, port = 5000)

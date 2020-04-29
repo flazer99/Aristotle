@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Current Cutoff</title>
+</head>
+<body>
+    <div class="heading">
+        <form action="http://localhost:5000/user/view-cutoff/details" method="get">
+            <h3>View Current Cut-Offs Now!</h3>
+            <table>
+                <tr>
+                    <td>College : </td>
+                    <td>
+                        <select id="college" name="college">
+                            {% for x in college %}    
+                            <option value="{{x}}">{{x}}</option>
+                            {% endfor %}
+                            </select>      
+                    </td>  
+                </tr>
+                <tr>
+                    <td>Branch : </td>
+                    <td>
+                        <select id="branch" name="branch">
+                            {% for y in branch %}    
+                            <option value="{{y}}">{{y}}</option>
+                            {% endfor %}
+                            </select>      
+                    </td>  
+                </tr>
+            </table>
+            <input type="submit" class="" name="" id="">
+        </form>
+        {% block content %}
+            {% if(ctr == 0) %}
+            {% else %}
+                <table>
+                    <tr>
+                        <td>
+                            College :
+                        </td>
+                        <td>
+                            {{result[0]}}
+                        </td>
+                        <td>
+                            Branch
+                        </td>
+                        <td>
+                            {{result[1]}}
+                        </td>
+                        <td>
+                            Current Cut-Off
+                        </td>
+                        <td>
+                            {{result[2]}}
+                        </td>
+                    </tr>
+                </table>
+            {% endif %}
+        {% endblock content %}
+    </div>
+</body>
+</html>
