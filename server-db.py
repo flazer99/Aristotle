@@ -3,6 +3,7 @@ from scipy import stats
 from math import pi
 from math import exp
 from math import sqrt
+
 app = Flask(__name__)
 
 def restructure(buff):
@@ -40,8 +41,9 @@ def admission_prediction(cut_off_mark):
     admits_prob = restructure(f)
     f.close()
     ip = [340, max(92, cut_off_mark), 5, 5, 10, 1]
-    print('The probability of getting admission is', predict(ip, probs, float(admits_prob[0][1]), float(admits_prob[1][1])))
-    
+    return predict(ip, probs, float(admits_prob[0][1]), float(admits_prob[1][1]))
+    # print('The probability of getting admission is', predict(ip, probs, float(admits_prob[0][1]), float(admits_prob[1][1])))
+
 @app.route("/")
 def home():
     return render_template('home.html')
@@ -242,6 +244,7 @@ def register():
                 f.write(str(college) + "," + str(branch) + "," + str(marks) + "," + str(name)+"\n")
                 break
     f.close()
+    REG = True
     return "Registration Process Completed!"
 
 @app.route("/admin/final-list")
@@ -391,10 +394,17 @@ def view_cutoff_details():
     except Exception as e:
         return "The Current Cut-Off list hasn't been released yet!" 
 
+# @app.route("/user/selection")
+# def user_selection():
+#     try:
+#         f = open("final-list","r")
+#         return render_template('user-selection.html')
+#     except Exception as e:
+#         return "The final list of students haven't been computed yet! Check back later!" 
+
 @app.route("/user/selection")
 def user_selection():
     try:
-        f = open("final-list","r")
         return render_template('user-selection.html')
     except Exception as e:
         return "The final list of students haven't been computed yet! Check back later!" 
@@ -406,7 +416,6 @@ def user_selection_details():
         f = open("final-list","r")
         res = restructure(f)
         f.close()
-        
         result = ["Sorry you didn't make the cutoff","Congratulations you're selected!"]
 
         f = 0
@@ -416,8 +425,16 @@ def user_selection_details():
                 break
         return render_template('user-result.html', result = result[f])
     except Exception as e:
+        f = open("student-apply","r")
+        applys = restructure(f)
+        f.close()
+        print(applys)
+        for i in applys:
+            if(sname == i[3]):
+                print(admission_prediction(float(i[2])))
+                return "The cutoff isn't decided yet, but you have a probability of {} to get admission".format(admission_prediction(float(i[2])))
         return "The final list of students haven't been computed yet! Check back later!" 
 
-
 if(__name__=='__main__'):
+    # admission_prediction(90)
     app.run(debug = True, port = 5000)
