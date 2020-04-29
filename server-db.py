@@ -4,6 +4,39 @@ app = Flask(__name__)
 def restructure(buff):
     data = [x.split(',') for x in buff.read().split('\n') if(len(x.split(',')) >= 2)]
     return data
+
+def normal_dist(x, mean, stdev):
+    exponent = exp(-((x-mean)**2 / (2 * stdev**2 )))
+    return (1 / (sqrt(2 * pi) * stdev)) * exponent
+    
+def predict(x, probs, prob_ADMIT, prob_NOADMIT):
+    pos = prob_ADMIT
+    for i in range(5):
+        pos *= normal_dist(x[i], probs[i][0], probs[i][1])
+    if(x[-1] == 0):
+        pos *= probs[5][1]
+    else:
+        pos *= probs[5][0]
+        
+    neg = prob_NOADMIT
+    for i in range(5):
+        neg *= normal_dist(x[i], probs[i][2], probs[i][3])
+    if(x[-1] == 0):
+        neg *= probs[5][3]
+    else:
+        neg *= probs[5][2]
+    return float(pos) / (pos+neg)
+
+def admission_prediction(cut_off_mark):
+    f = open("probs","r")
+    probs = restructure(f)
+    probs = [list(map(float, i)) for i in probs]
+    f.close()
+    f = open("prob_(no)admits")
+    admits_prob = restructure(f)
+    f.close()
+    ip = [340, max(92, cut_off_mark), 5, 5, 10, 1]
+    print('The probability of getting admission is', predict(ip, probs, float(admits_prob[0][1]), float(admits_prob[1][1])))
     
 @app.route("/")
 def home():
