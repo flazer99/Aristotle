@@ -244,7 +244,6 @@ def register():
                 f.write(str(college) + "," + str(branch) + "," + str(marks) + "," + str(name)+"\n")
                 break
     f.close()
-    REG = True
     return "Registration Process Completed!"
 
 @app.route("/admin/final-list")
@@ -436,5 +435,4 @@ def user_selection_details():
         return "The final list of students haven't been computed yet! Check back later!" 
 
 if(__name__=='__main__'):
-    # admission_prediction(90)
     app.run(debug = True, port = 5000)
