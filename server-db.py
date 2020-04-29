@@ -63,7 +63,16 @@ def college_insert_values():
 
 @app.route("/admin/add-cutoffs")
 def add_cutoff():
-    return render_template('add-cutoff.html')
+    try:
+        f = open("college-details","r")
+        res = restructure(f)
+        college_list = list()
+        for i in res:
+            college_list.append(i[0])
+        f.close()
+    except Exception as e:
+        return "Please add the details about the college!"
+    return render_template('add-cutoff.html', college = college_list)
 
 @app.route("/admin/add-cutoffs/details", methods=["post"])
 def cutoffs_insert_values():
@@ -279,11 +288,14 @@ def apply_college():
     f = open("previous-cutoff-details","r")
     res = restructure(f)
     college = list()
+    branch = list()
     for i in res:
         college.append(i[0])
     college = list(set(college))
+    for i in res:
+        branch.append(i[1])
     f.close()
-    return render_template("apply-college.html", college = college)
+    return render_template("apply-college.html", college = college, branch = branch)
 
 @app.route("/user/apply/details", methods = ["get"])
 def apply_college_details():

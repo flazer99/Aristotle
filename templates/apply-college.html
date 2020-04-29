@@ -21,7 +21,13 @@
                 </tr>
                 <tr>
                     <td>Branch of Preference</td>
-                    <td><input type="text" placeholder="Branch Of Preference" name="branch" id=""></td>
+                    <td>
+                        <select id="branch" name="branch">
+                            {% for x in branch %}    
+                            <option value="{{x}}">{{x}}</option>
+                            {% endfor %}
+                            </select>      
+                    </td>  
                 </tr>
                 <tr>
                     <td>Name of the Student</td>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Cut-Off</title>
+    <title>Add Previous Cut-Off</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -71,11 +71,17 @@
 <body>
     <div class="heading">
         <form action="http://localhost:5000/admin/add-cutoffs/details" method="post">
-            <h3>Register Now!</h3>
+            <h3>Register Previous Cut-Off Now!</h3>
             <table>
                 <tr>
                     <td class="td1 alert alert-danger">College Name : </td>
-                    <td><input type="text" placeholder="College Name" class="btn btn-outline-danger" name="name" id=""></td>
+                    <td>
+                        <select id="name" name="name">
+                            {% for x in college %}    
+                            <option value="{{x}}">{{x}}</option>
+                            {% endfor %}
+                            </select>      
+                    </td>  
                 </tr>
                 <tr>
                     <td class="td1 alert alert-warning">Branch : </td>
