@@ -354,5 +354,33 @@ def view_cutoff_details():
     except Exception as e:
         return "The Current Cut-Off list hasn't been released yet!" 
 
+@app.route("/user/selection")
+def user_selection():
+    try:
+        f = open("final-list","r")
+        return render_template('user-selection.html')
+    except Exception as e:
+        return "The final list of students haven't been computed yet! Check back later!" 
+
+@app.route("/user/selection/details", methods = ["get"])
+def user_selection_details():
+    sname = request.args.get('sname')
+    try:
+        f = open("final-list","r")
+        res = restructure(f)
+        f.close()
+        
+        result = ["Sorry you didn't make the cutoff","Congratulations you're selected!"]
+
+        f = 0
+        for i in res:
+            if(sname == i[3]):
+                f = 1
+                break
+        return render_template('user-result.html', result = result[f])
+    except Exception as e:
+        return "The final list of students haven't been computed yet! Check back later!" 
+
+
 if(__name__=='__main__'):
     app.run(debug = True, port = 5000)
