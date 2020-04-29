@@ -1,4 +1,8 @@
 from flask import *
+from scipy import stats
+from math import pi
+from math import exp
+from math import sqrt
 app = Flask(__name__)
 
 def restructure(buff):
