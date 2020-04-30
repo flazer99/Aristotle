@@ -7,8 +7,28 @@
     <title>Final List of Selected Students</title>
 </head>
 
+
+<style>
+    body {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+    
+    .main {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    
+
+</style>
+
 <body>
-    <div>
+    <div class="main">
         <h3>Final List of Qualified Students</h3>
         <table>
             {% for i in students %}
