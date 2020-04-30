@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Result</title>
 </head>
+
+<style>
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+    
+    .main {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    </style>
+
 <body>
-    <div>
-        {{result}}
+    <div class="main">
+        <h1>
+            {{result}}
+        </h1>
     </div>
 </body>
 </html>

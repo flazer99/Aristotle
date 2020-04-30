@@ -5,8 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Login</title>
 </head>
+<style>
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+    
+    .main {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .button {
+        padding: 0.5rem;
+        margin: 0.5rem 1rem 0.5rem 0rem;
+        border-radius: 5%;
+        border: none;
+        background-color: black;
+        color: white;
+        float: right;
+    }
+
+    input {
+        border-radius: 5%;
+        padding: 0.5rem;
+
+    }
+    
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    
+    </style>
 <body>
-    <div>
+    <div class="main">
         <form action="http://localhost:5000/user/login/check" method = "post">
             <table>
                 <tr>
@@ -26,7 +65,7 @@
                     </td>
                 </tr>
             </table>
-            <input type="submit" name="" id="">
+            <input type="submit" class="button" name="" id="">
         </form>
         <h3><a href="http://localhost:5000/user/signup">Sign Up!</a></h3>
     </div>
