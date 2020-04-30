@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap" rel="stylesheet">
     <title>Final List of Selected Students</title>
 </head>
 
@@ -12,6 +13,7 @@
     body {
         height: 100vh;
         width: 100vw;
+        background-color: aqua;
         overflow: hidden;
     }
     
@@ -29,27 +31,28 @@
 
 <body>
     <div class="main">
-        <h3>Final List of Qualified Students</h3>
+        <h2 style="font-family: 'Inconsolata', monospace;">Final List of Qualified Students</h2>
         <table>
             {% for i in students %}
             <tr>
-                <td>
-                    Name Of the Student
+                <td style="font-family: 'Inconsolata', monospace;">
+                    Name Of the Student: 
+                </td>
+                <td >
+                    {{i[3]}} <span>,</span>
+
+                </td>
+                <td style="font-family: 'Inconsolata', monospace;">
+                    College:
                 </td>
                 <td>
-                    {{i[3]}}
+                    {{i[0]}} <span>,</span>
+                </td>
+                <td style="font-family: 'Inconsolata', monospace;">
+                    Branch:
                 </td>
                 <td>
-                    College 
-                </td>
-                <td>
-                    {{i[0]}}
-                </td>
-                <td>
-                    Branch
-                </td>
-                <td>
-                    {{i[1]}}
+                    {{i[1]}} <span>,</span>
                 </td>
             </tr>
             {% endfor %}

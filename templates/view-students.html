@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap" rel="stylesheet">
     <title>View Students</title>
 </head>
 
@@ -11,6 +12,7 @@
     body {
         height: 100vh;
         width: 100vw;
+        background-color: aqua;
         overflow: hidden;
     }
     
@@ -55,7 +57,7 @@
         <form action="http://localhost:5000/admin/view-students/details" method="get">
             <table>
                 <tr>
-                    <td>Select Stream</td>
+                    <td style="font-family: 'Inconsolata', monospace;">Select Stream</td>
                     <td>
                         <select id="branch" name="branch">
                             {% for x in branch %}    

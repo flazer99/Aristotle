@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrator Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -45,6 +46,7 @@
 
     table{
         margin:auto;
+        width: 50%;
     }
 
     td{
@@ -54,29 +56,32 @@
     button{
         width:50%;
     }
+
+
 </style>
 </head>
 
 <body>
     <div class = "heading">
+        <h2 style="font-family: 'Inconsolata', monospace;">DashBoard</h2>
         <table>
             <tr>
-                <td><a href="http://localhost:5000/admin/add-college"><button class = "btn btn-outline-danger">Add College</button></a></td>
+                <td style="font-family: 'Inconsolata', monospace;"><a href="http://localhost:5000/admin/add-college"><button class = "btn btn-outline-danger">Add College</button></a></td>
             </tr>
             <tr>
-                <td><a href="http://localhost:5000/admin/add-cutoffs"><button class = "btn btn-outline-warning">Add Cut - Offs</button></a></td>
+                <td style="font-family: 'Inconsolata', monospace;"><a href="http://localhost:5000/admin/add-cutoffs"><button class = "btn btn-outline-warning">Add Cut - Offs</button></a></td>
             </tr>
             <tr>
-                <td><a href="http://localhost:5000/admin/view-students"><button class = "btn btn-outline-primary">View Students</button></a></td>
+                <td style="font-family: 'Inconsolata', monospace;"><a href="http://localhost:5000/admin/view-students"><button class = "btn btn-outline-primary">View Students</button></a></td>
             </tr>
             <tr>
-                <td><a href="http://localhost:5000/admin/create-cutoff"><button class = "btn btn-outline-info">Create Cut - Off List</button></a></td>
+                <td style="font-family: 'Inconsolata', monospace;"><a href="http://localhost:5000/admin/create-cutoff"><button class = "btn btn-outline-info">Create Cut - Off List</button></a></td>
             </tr>
             <tr>
-                <td><a href="http://localhost:5000/admin/register"><button class = "btn btn-outline-info">Register Students</button></a></td>
+                <td style="font-family: 'Inconsolata', monospace;"><a href="http://localhost:5000/admin/register"><button class = "btn btn-outline-info">Register Students</button></a></td>
             </tr>
             <tr>
-                <td><a href="http://localhost:5000/admin/final-list"><button class = "btn btn-outline-info">View final Students List</button></a></td>
+                <td style="font-family: 'Inconsolata', monospace;"><a href="http://localhost:5000/admin/final-list"><button class = "btn btn-outline-info">View final Students List</button></a></td>
             </tr>
         </table>
     </div>
