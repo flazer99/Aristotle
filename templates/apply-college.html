@@ -6,18 +6,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap"
      rel="stylesheet">
      <link href="https://fonts.googleapis.com/css?family=Aladin&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+ </script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+ </script>
      <title>Apply for a College</title>
 </head>
 <style>
 
-    body {
-        height: 100vh;
-        width: 100vw;
-        background-color: aqua;
-        overflow: hidden;
+body {
+        text-align: center;
+        margin: 2rem;
+        background: #642B73;
+        background: -webkit-linear-gradient(to top, #C6426E, #642B73);
+        background: linear-gradient(to top, #C6426E, #642B73);
     }
-    
-    .main {
+
+    .heading {
+        margin-top: 3%;
+        margin-bottom: 4%;
+        padding-top: 8%;
+        padding-bottom: 8%;
+        background-color: white;
+    }
+
+    .btn {
+        margin-top: 3%;
+        width:100%;
+    }
+
+    table{
+        margin:auto;
+        width: 50%;
+    }
+
+    td{
+        width:10%;
+    }
+
+    button{
+        width:50%;
+    }
+
+    .outer {
         display: flex;
         flex-direction: column;
         height: 75%;
@@ -25,7 +63,7 @@
         align-items: center;
         justify-content: center;
     }
-    
+
     .button {
         padding: 0.5rem;
         margin: 0.5rem 1rem 0.5rem 0rem;
@@ -39,31 +77,36 @@
     input {
         border-radius: 5%;
         padding: 0.5rem;
-        margin-bottom: 1.5rem;
     }
-    
+
+    table {
+        margin-top: 2rem;
+    }
+
     a {
         color: black;
         text-decoration: none;
     }
-    
-    h1
-    {
+
+    h1 {
         font-family: 'Aladin';
     }
+
+    tr{
+        line-height: 2;
+    }
+
     </style>
 <body>
-    <a class="button is-primary nav-but" href="{{ url_for('get_user_dashboard') }}">
-        <strong>Dashboard</strong>
-    </a>
-    <div class="main">
-        <h1 title is-size-1 has-text-centered>Apply to our college</h1>
+
+    <div class="container heading rounded">
+        <h2>Apply to our college</h2>
         <form action="http://localhost:5000/user/apply/details" method="get">
-            <table cellspacing="20">
+            <table>
                 <tr>
-                    <td style="font-family: 'Inconsolata', monospace;">College Name: </td>
+                    <td>College Name: </td>
                     <td>
-                        <select id="college-name" name="college-name">
+                        <select class = "border border-primary btn" id="college-name" name="college-name">
                             {% for x in college %}    
                             <option value="{{x}}">{{x}}</option>
                             {% endfor %}
@@ -71,9 +114,9 @@
                     </td>  
                 </tr>
                 <tr>
-                    <td style="font-family: 'Inconsolata', monospace;">Branch of Preference:</td>
+                    <td>Branch of Preference:</td>
                     <td>
-                        <select id="branch" name="branch">
+                        <select class = "border border-primary btn" id="branch" name="branch">
                             {% for x in branch %}    
                             <option value="{{x}}">{{x}}</option>
                             {% endfor %}
@@ -81,15 +124,19 @@
                     </td>  
                 </tr>
                 <tr>
-                    <td style="font-family: 'Inconsolata', monospace;">Name of the Student:</td>
-                    <td><input type="text" placeholder="Name of the Student" name="sname"></td>
+                    <td>Name of the Student:</td>
+                    <td><input  class = "border border-primary btn" type="text" placeholder="Name of the Student" name="sname"></td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Inconsolata', monospace;">Marks Scored in PCM:</td>
-                    <td><input type="text" placeholder="Marks Scored (PCM)" name="smarks"></td>
+                    <td>Marks Scored in PCM:</td>
+                    <td><input  class = "border border-primary btn" type="text" placeholder="Marks Scored (PCM)" name="smarks"></td>
                 </tr>
             </table>
-            <input type="submit" class="button" name="" id="">
+            <input type="submit" class="btn btn-outline-danger" name="" id="">
         </form>
+        <a class="btn btn-outline-primary" href="{{ url_for('get_user_dashboard') }}">
+            <strong>Dashboard</strong>
+        </a>
+    </div>
 </body>
 </html>
