@@ -6,69 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-</script>
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 
-<style>
-    body {
-        text-align: center;
-        margin: 2rem;
-        background: #642B73;
-        background: -webkit-linear-gradient(to top, #C6426E, #642B73);
-        background: linear-gradient(to top, #C6426E, #642B73);
-    }
+    <style>
+        body {
+            text-align: center;
+            margin: 2rem;
+            background: #642B73;
+            background: -webkit-linear-gradient(to top, #C6426E, #642B73);
+            background: linear-gradient(to top, #C6426E, #642B73);
+        }
 
-    .heading {
-        margin-top: 6%;
-        margin-bottom: 7%;
-        padding-top: 8%;
-        padding-bottom: 8%;
-        background-color: white;
-    }
+        .heading {
+            margin-top: 6%;
+            margin-bottom: 5%;
+            padding-top: 8%;
+            padding-bottom: 8%;
+            background-color: white;
+        }
 
-    .btn {
-        margin-top: 3%;
-        width:100%;
-    }
+        .btn {
+            margin-top: 3%;
+            width: 100%;
+        }
 
-    table{
-        margin:auto;
-        width: 50%;
-    }
+        table {
+            margin: auto;
+            width: 50%;
+        }
 
-    td{
-        width:10%;
-    }
+        td {
+            width: 10%;
+        }
 
-    button{
-        width:50%;
-    }
-</style>
+        button {
+            width: 50%;
+        }
+    </style>
 </head>
 
 <body>
-    <div class = "heading">
-        <h2>User DashBoard</h2>
+    <div class="heading">
+        <h2>Student Dashboard</h2>
         <table>
             <tr>
-                <td><a href="http://localhost:5000/user/view-college"><button class = "btn btn-outline-danger">View College Details</button></a></td>
+                <td><a href="http://localhost:5000/user/view-college"><button class="btn btn-outline-danger">View
+                            College Details</button></a></td>
             </tr>
             <tr>
-                <td><a href="http://localhost:5000/user/apply"><button class = "btn btn-outline-warning">Apply to College</button></a></td>
+                <td><a href="http://localhost:5000/user/apply"><button class="btn btn-outline-warning">Apply to
+                            College</button></a></td>
             </tr>
             <tr>
-                <td><a href="http://localhost:5000/user/view-cutoff"><button class = "btn btn-outline-primary">View Current Cut-Off List</button></a></td>
+                <td><a href="http://localhost:5000/user/view-cutoff"><button class="btn btn-outline-primary">View
+                            Current Cut-Off List</button></a></td>
             </tr>
             <tr>
-                <td><a href="http://localhost:5000/user/selection"><button class = "btn btn-outline-info">Selection Notification</button></a></td>
+                <td><a href="http://localhost:5000/user/selection"><button class="btn btn-outline-info">Selection
+                            Notification</button></a></td>
             </tr>
         </table>
         <br>

@@ -36,8 +36,8 @@
     }
 
     .heading {
-        margin-top: 10%;
-        margin-bottom: 15%;
+        margin-top: 8%;
+        margin-bottom: 8%;
         padding-top: 8%;
         padding-bottom: 8%;
         background-color: white;
@@ -142,21 +142,21 @@
         {% block content %}
         {% if(ctr == 0) %}
         {% else %}
-        <table class="tab">
-            <tr class="tr">
-                <th class="th">College</th>
-                <th class="th">Branch</th>
-                <th class="th">Cutoff</th>
+        <table class="btn">
+            <tr class="rounded border">
+                <th class="">College</th>
+                <th class="">Branch</th>
+                <th class="">Cutoff</th>
             </tr>
             {% for i in cutoff %}
-            <tr class="tr">
-                <td class="td">
+            <tr >
+                <td class="border rounded border-info">
                     {{i[0]}}
                 </td>
-                <td class="td">
+                <td class="border rounded border-warning">
                     {{i[1]}}
                 </td>
-                <td class="td">
+                <td class="border rounded border-danger">
                     {{i[2]}}
                 </td>
             </tr>
