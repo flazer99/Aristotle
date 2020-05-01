@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Aladin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>College Admission Management System</title>
 </head>
 
@@ -15,11 +17,25 @@ body {
 }
 
 .main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttons
+{
     display: flex;
-    height: 100%;
-    width: 100%;
     align-items: center;
     justify-content: center;
+    padding-top: calc(10vh);
+}
+
+h1
+{
+    /* font-family: 'Aladin'; */
+    font-family: 'Montserrat', sans-serif;
+    /* font-size: medium; */
 }
 
 button {
@@ -33,22 +49,28 @@ button {
 a {
     color: white !important;
     text-decoration: none;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 </style>
 
 <body>
+    
     <div class="main">
-        <button>
-            <a href="http://localhost:5000/admin/login">
-            Admin
-            </a>
-        </button>
-        <button>
-            <a href="http://localhost:5000/user/login">
-            User
-            </a>
-        </button>
+        <h1>Welcome to Nibbas college portal.</h1>
+        <div class="buttons">
+            <button>
+                <a href="http://localhost:5000/admin/login">
+                Admin
+                </a>
+            </button>
+            <button>
+                <a href="http://localhost:5000/user/login">
+                User
+                </a>
+            </button>
+        </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Aladin&display=swap');
+
+body
+{
+    background-color: aqua;
+    height: 100vh;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden;
+}
+
+.title
+{
+    
+    font-family: 'Aladin';
+}
+
+.outer
+{
+    padding-top: 2rem;
+    height: 100%;
+}
+
+.inner
+{
+    font-family: 'Roboto';
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background-color:white;
+    padding: 2rem 0;
+    border-radius: 2rem;
+}
+
+h1
+{
+    /* padding-top: 5rem; */
+    http://localhost:5000/admin/signup/success
+}
+
+.button
+{
+    margin-top: 1.5rem;
+    font-family: 'Roboto';
+}
+
+.field
+{
+    padding-left: calc(2rem + 1vw);
+    padding-right: calc(2rem + 1vw);
+}
+
+.nav-but
+{
+    margin-top: -0.5px;
+}
+
+.staffna
+{
+    margin-top: 19%;
+}

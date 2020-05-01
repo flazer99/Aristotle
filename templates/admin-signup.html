@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap" rel="stylesheet">
-    <title>Admin Sign Up</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <title>Admin Login</title>
 </head>
 
 <style>
@@ -16,6 +19,16 @@
         overflow: hidden;
     }
     
+    table
+    {
+        padding-top: calc(.4rem + 1vh);
+    }
+
+    .navbar
+    {
+        background: transparent;
+    }
+
     .main {
         display: flex;
         flex-direction: column;
@@ -46,37 +59,57 @@
         color: black;
         text-decoration: none;
     }
-
-    h1{
-        font-family: 'Inconsolata', monospace;
-    }
     
+    h1{
+        font-family: 'Montserrat', sans-serif;
+    }
     </style>
 
 <body>
-    <div class="main">
-        <h1>SignUp.</h1>
-        <form action="http://localhost:5000/admin/signup/success" method = "post">
-            <table>
-                <tr>
-                    <td style="font-family: 'Inconsolata', monospace;">
-                        Username : 
-                    </td>
-                    <td>
-                        <input type="text" name = "username">
-                    </td>
-                </tr>
-                <tr>
-                    <td style="font-family: 'Inconsolata', monospace;">
-                        Password : 
-                    </td>
-                    <td>
-                        <input type="password" name = "password">
-                    </td>
-                </tr>
-            </table>
-            <input type="submit" class="button" name="" id="">
-        </form>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary nav-but" href="{{ url_for('admin_login') }}">
+                            <strong>Login</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="outer">
+    <h1 class="title is-size-1 has-text-centered">SignUp</h1>
+        <div class=" inner">
+            <form action="{{url_for('signup_register')}}" method="POST">
+                <div class="field">
+                    <label class="label">Username:</label>
+                    <div class="control has-icons-left ">
+                        <input class="input is-success is-medium" type="text" placeholder="Username here!" name="username">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </div>
+                </div>
+                <br>
+                <div class="field">
+                    <label class="label">Password:</label>
+                    <div class="control has-icons-left">
+                        <input class="input is-success is-medium" type="password" placeholder="Password here" name="password"
+                            name="password">
+                        <span class="icon is-large is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="field control has-text-centered">
+                    <button class="button is-link">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
