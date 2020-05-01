@@ -1,21 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Aladin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
     <title>View College</title>
 </head>
 <style>
-
-    body {
+    /* body {
         height: 100vh;
         width: 100vw;
         background-color: aqua;
         overflow: hidden;
+    } */
+
+    body {
+        text-align: center;
+        margin: 2rem;
+        background: #642B73;
+        background: -webkit-linear-gradient(to top, #C6426E, #642B73);
+        background: linear-gradient(to top, #C6426E, #642B73);
     }
-    
+
+    .heading {
+        margin-top: 10%;
+        margin-bottom: 15%;
+        padding-top: 8%;
+        padding-bottom: 8%;
+        background-color: white;
+    }
+
+    .btn {
+        margin-top: 3%;
+        width:100%;
+    }
+
+    table{
+        margin:auto;
+        width: 50%;
+    }
+
+    td{
+        width:10%;
+    }
+
+    button{
+        width:50%;
+    }
+
     .outer {
         display: flex;
         flex-direction: column;
@@ -43,76 +88,87 @@
     table {
         margin-top: 2rem;
     }
-    
+
     a {
         color: black;
         text-decoration: none;
     }
-    h1
-    {
+
+    h1 {
         font-family: 'Aladin';
-    }    
-    .tab, .td, .th {
-    border: 1px solid black;
+    }
+
+    .tab,
+    .td,
+    .th {
+        border: 1px solid black;
     }
 
     .tab {
-    border-collapse: collapse;
-    width: 50%;
+        border-collapse: collapse;
+        width: 50%;
     }
 
     .th {
-    height: 50px;
+        height: 50px;
     }
-    .tr:hover {background-color: #f5f5f5;}
-    </style>
+
+    .tr:hover {
+        background-color: #f5f5f5;
+    }
+</style>
+
 <body>
- 
-    <a class="button is-primary nav-but" href="{{ url_for('get_user_dashboard') }}">
-        <strong>Dashboard</strong>
-    </a>
-    <div class="outer">
-        <h1 class="title is-size-2" >View College Details</h1>
+
+    
+    <div class="container heading">
+        <h2>View College Details</h2>
+        
         <form action="http://localhost:5000/user/view-college/details" method="get">
-            <table cellspacing="20">
+            <table>
                 <tr>
                     <td style="font-family: 'Montserrat', sans-serif;">College Name: </td>
                     <td>
-                        <select id="college-name" name="college-name">
-                            {% for x in college %}    
+                        <select id="college-name" class = "btn border border-primary" name="college-name">
+                            {% for x in college %}
                             <option value="{{x}}">{{x}}</option>
                             {% endfor %}
-                            </select>      
-                    </td>  
+                        </select>
+                    </td>
                 </tr>
             </table>
-            <input type="submit" class="button" name="" id="">
+            <input type="submit" class="btn btn-outline-danger " name="" id="">
         </form>
         {% block content %}
-            {% if(ctr == 0) %}
-            {% else %}
-                <table class="tab">
-                    <tr class="tr">
-                        <th class="th">College</th>
-                        <th class="th">Branch</th>
-                        <th class="th">Cutoff</th>
-                    </tr>
-                    {% for i in cutoff %}
-                    <tr class="tr">
-                        <td class="td">
-                            {{i[0]}}
-                        </td>
-                        <td class="td">
-                            {{i[1]}}
-                        </td>
-                        <td class="td">
-                            {{i[2]}}
-                        </td>
-                    </tr>
-                    {% endfor %} 
-                </table>
-            {% endif %}
+        {% if(ctr == 0) %}
+        {% else %}
+        <table class="tab">
+            <tr class="tr">
+                <th class="th">College</th>
+                <th class="th">Branch</th>
+                <th class="th">Cutoff</th>
+            </tr>
+            {% for i in cutoff %}
+            <tr class="tr">
+                <td class="td">
+                    {{i[0]}}
+                </td>
+                <td class="td">
+                    {{i[1]}}
+                </td>
+                <td class="td">
+                    {{i[2]}}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
         {% endblock content %}
+
+        <a class="btn btn-outline-primary" href="{{ url_for('get_user_dashboard') }}">
+            <strong>Dashboard</strong>
+        </a>
     </div>
 </body>
+
 </html>
