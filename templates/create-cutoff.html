@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aladin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
     <title>Create Cut-Off</title>
 </head>
 
@@ -15,6 +18,11 @@
         overflow: hidden;
     }
     
+    h1
+    {
+        font-family: 'Aladin';
+    }
+
     .main {
         display: flex;
         flex-direction: column;
@@ -48,10 +56,11 @@
     </style>
 <body>
     <div class="main">
+        <h1 title is-size-1 has-text-centered>Enter Cut-off marks</h1>
         <form action="http://localhost:5000/admin/create-cutoff/details" method="get">
-            <table>
+            <table cellspacing="25">
                 <tr>
-                    <td style="font-family: 'Inconsolata', monospace;">Select College</td>
+                    <td style="font-family: 'Inconsolata', monospace;">Select College:</td>
                     <td>
                         <select id="college" name="college">
                             {% for x in college %}    
@@ -61,7 +70,7 @@
                     </td>  
                 </tr>
                 <tr>
-                    <td style="font-family: 'Inconsolata', monospace;">Select Branch</td>
+                    <td style="font-family: 'Inconsolata', monospace;">Select Branch:</td>
                     <td>
                         <select id="branch" name="branch">
                             {% for y in branch %}    
@@ -71,7 +80,7 @@
                     </td>  
                 </tr>
                 <tr>
-                    <td style="font-family: 'Inconsolata', monospace;">Add Cut-Off Mark</td>
+                    <td style="font-family: 'Inconsolata', monospace;">Add Cut-Off Mark:</td>
                     <td><input type="text" name = "marks"></td>
                 </tr>
             </table>

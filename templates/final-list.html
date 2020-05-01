@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aladin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>Final List of Selected Students</title>
 </head>
 
@@ -26,38 +28,77 @@
         justify-content: center;
     }
     
+    h1{
+        font-family: 'Aladin';
+        /* font-size: 20px; */
+    }
+    /* table {
+    width:50%;
+    padding-bottom: 2rem;
+    }
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    }
+    th, td {
+    padding: 15px;
+    text-align: left;
+    }
+    table#t01 tr:nth-child(even) {
+    background-color: #eee;
+    }
+    table#t01 tr:nth-child(odd) {
+    background-color: #fff;
+    }
+    table#t01 th {
+    background-color: black;
+    color: white;
+    } */
+
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+}
+
+th {
+  height: 50px;
+}
+tr:hover {background-color: #f5f5f5;}
+        
 
 </style>
 
 <body>
     <div class="main">
-        <h2 style="font-family: 'Inconsolata', monospace;">Final List of Qualified Students</h2>
+        <h1 title is-size-1>Final List of Qualified Students</h1>
         <table>
+            <tr>
+                <th>Name of student</th>
+                <th>College</th>
+                <th>Branch</th>
+            </tr>
             {% for i in students %}
             <tr>
-                <td style="font-family: 'Inconsolata', monospace;">
-                    Name Of the Student: 
-                </td>
-                <td >
-                    {{i[3]}} <span>,</span>
+                
+                <td>
+                    {{i[3]}}
 
                 </td>
-                <td style="font-family: 'Inconsolata', monospace;">
-                    College:
-                </td>
+
                 <td>
-                    {{i[0]}} <span>,</span>
+                    {{i[0]}} 
                 </td>
-                <td style="font-family: 'Inconsolata', monospace;">
-                    Branch:
-                </td>
+
                 <td>
-                    {{i[1]}} <span>,</span>
+                    {{i[1]}}
                 </td>
             </tr>
             {% endfor %}
         </table>
     </div>
 </body>
-
 </html>
