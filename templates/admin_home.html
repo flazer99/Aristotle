@@ -56,7 +56,7 @@
 
 <body>
     <div class="heading">
-        <h2>Dashboard</h2>
+        <h2 id="app"></h2>
         <table>
             <tr>
                 <td><a href="http://localhost:5000/admin/add-college"><button class="btn btn-outline-danger">Add
@@ -88,6 +88,21 @@
             <strong>Logout</strong>
         </a>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/1.0.0/typewriter.min.js"></script>
+    <script>
+        var app = document.getElementById('app');
+
+        var typewriter = new Typewriter(app, {
+            loop: true
+        });
+
+        typewriter.typeString('Administrator.')
+            .pauseFor(500)
+            .deleteAll()
+            .typeString('Dashboard.')
+            .pauseFor(500)
+            .start();
+    </script>
 </body>
 
 </html>
