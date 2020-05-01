@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aladin&display=swap" rel="stylesheet">
     <title>View College</title>
 </head>
 <style>
@@ -10,18 +12,19 @@
     body {
         height: 100vh;
         width: 100vw;
+        background-color: aqua;
         overflow: hidden;
     }
     
-    .main {
+    .outer {
         display: flex;
         flex-direction: column;
-        height: 100%;
+        height: 75%;
         width: 100%;
         align-items: center;
         justify-content: center;
     }
-    
+
     .button {
         padding: 0.5rem;
         margin: 0.5rem 1rem 0.5rem 0rem;
@@ -45,14 +48,35 @@
         color: black;
         text-decoration: none;
     }
-    
+    h1
+    {
+        font-family: 'Aladin';
+    }    
+    .tab, .td, .th {
+    border: 1px solid black;
+    }
+
+    .tab {
+    border-collapse: collapse;
+    width: 50%;
+    }
+
+    .th {
+    height: 50px;
+    }
+    .tr:hover {background-color: #f5f5f5;}
     </style>
 <body>
-    <div class="main">
+ 
+    <a class="button is-primary nav-but" href="{{ url_for('get_user_dashboard') }}">
+        <strong>Dashboard</strong>
+    </a>
+    <div class="outer">
+        <h1 class="title is-size-2" >View College Details</h1>
         <form action="http://localhost:5000/user/view-college/details" method="get">
-            <table>
+            <table cellspacing="20">
                 <tr>
-                    <td>College Name</td>
+                    <td style="font-family: 'Montserrat', sans-serif;">College Name: </td>
                     <td>
                         <select id="college-name" name="college-name">
                             {% for x in college %}    
@@ -67,16 +91,21 @@
         {% block content %}
             {% if(ctr == 0) %}
             {% else %}
-                <table>
+                <table class="tab">
+                    <tr class="tr">
+                        <th class="th">College</th>
+                        <th class="th">Branch</th>
+                        <th class="th">Cutoff</th>
+                    </tr>
                     {% for i in cutoff %}
-                    <tr>
-                        <td>
+                    <tr class="tr">
+                        <td class="td">
                             {{i[0]}}
                         </td>
-                        <td>
+                        <td class="td">
                             {{i[1]}}
                         </td>
-                        <td>
+                        <td class="td">
                             {{i[2]}}
                         </td>
                     </tr>

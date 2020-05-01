@@ -70,15 +70,19 @@
                 <td ><a href="http://localhost:5000/admin/view-students"><button class = "btn btn-outline-primary">View Students</button></a></td>
             </tr>
             <tr>
-                <td ><a href="http://localhost:5000/admin/create-cutoff"><button class = "btn btn-outline-info">Create Cut - Off List</button></a></td>
+                <td ><a href="http://localhost:5000/admin/create-cutoff"><button class = "btn btn-outline-secondary">Create Cut - Off List</button></a></td>
             </tr>
             <tr>
-                <td ><a href="http://localhost:5000/admin/register"><button class = "btn btn-outline-info">Register Students</button></a></td>
+                <td ><a href="http://localhost:5000/admin/register"><button class = "btn btn-outline-success">Register Students</button></a></td>
             </tr>
             <tr>
                 <td ><a href="http://localhost:5000/admin/final-list"><button class = "btn btn-outline-info">View final Students List</button></a></td>
             </tr>
         </table>
+        <br>
+        <a class="button is-primary nav-but" href="{{ url_for('home') }}">
+            <strong>Logout</strong>
+        </a>
     </div>
 </body>
 

@@ -257,6 +257,10 @@ def final_list():
 
     return render_template("final-list.html", students = students )
 
+@app.route("/admin/dashboard")
+def get_admin_dashboard():
+    return render_template('admin_home.html')
+
 @app.route("/user/login")
 def user_login():
     return render_template('user-login.html')
@@ -274,6 +278,9 @@ def user_signup_register():
         f.write(str(usr) + "," + str(password) + "\n")
     return render_template("user-login.html")
     
+@app.route("/user/dashboard")
+def get_user_dashboard():
+    return render_template('user-home.html')
 
 @app.route("/user/login/check", methods = ["post"])
 def user_login_check():

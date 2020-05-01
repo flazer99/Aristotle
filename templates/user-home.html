@@ -22,12 +22,8 @@
         text-align: center;
         margin: 2rem;
         background: #642B73;
-        /* fallback for old browsers */
         background: -webkit-linear-gradient(to top, #C6426E, #642B73);
-        /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to top, #C6426E, #642B73);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
     }
 
     .heading {
@@ -45,6 +41,7 @@
 
     table{
         margin:auto;
+        width: 50%;
     }
 
     td{
@@ -59,6 +56,7 @@
 
 <body>
     <div class = "heading">
+        <h2>User DashBoard</h2>
         <table>
             <tr>
                 <td><a href="http://localhost:5000/user/view-college"><button class = "btn btn-outline-danger">View College Details</button></a></td>
@@ -73,6 +71,10 @@
                 <td><a href="http://localhost:5000/user/selection"><button class = "btn btn-outline-info">Selection Notification</button></a></td>
             </tr>
         </table>
+        <br>
+        <a class="button is-primary nav-but" href="{{ url_for('home') }}">
+            <strong>Logout</strong>
+        </a>
     </div>
 </body>
 
