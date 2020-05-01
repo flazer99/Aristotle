@@ -244,7 +244,7 @@ def register():
                 f.write(str(college) + "," + str(branch) + "," + str(marks) + "," + str(name)+"\n")
                 break
     f.close()
-    return "Registration Process Completed!"
+    return render_template('registration-completed.html')
 
 @app.route("/admin/final-list")
 def final_list():

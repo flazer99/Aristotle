@@ -31,8 +31,8 @@
         }
 
         .heading {
-            margin-top: 6%;
-            margin-bottom: 6%;
+            margin-top: 2%;
+            margin-bottom: 3%;
             padding-top: 8%;
             padding-bottom: 8%;
             background-color: white;
@@ -45,6 +45,7 @@
 
         table {
             margin: auto;
+            margin-top: 2rem;
         }
 
         td {
@@ -68,12 +69,12 @@
 <body>
     <div class="heading">
         <form action="http://localhost:5000/admin/add-cutoffs/details" method="post">
-            <h3>Register Previous Cut-Off Now!</h3>
+            <h4>Register Previous Cut-Off Now!</h4>
             <table>
                 <tr>
                     <td class="td1 alert alert-danger">College Name : </td>
                     <td>
-                        <select id="name" name="name">
+                        <select class = "btn border-danger" id="name" name="name">
                             {% for x in college %}    
                             <option value="{{x}}">{{x}}</option>
                             {% endfor %}
@@ -82,12 +83,12 @@
                 </tr>
                 <tr>
                     <td class="td1 alert alert-warning">Branch : </td>
-                    <td><input type="text" placeholder="Enter Branch" class="btn btn-outline-warning" name="branch" id="">
+                    <td><input type="text" placeholder="Enter Branch" class="btn border-warning" name="branch" id="">
                     </td>
                 </tr>
                 <tr>
                     <td class="td1 alert alert-info">Cut-Off : </td>
-                    <td><input type="text" placeholder="Enter Cut-Off" class="btn btn-outline-info" name="cut-off" id="">
+                    <td><input type="text" placeholder="Enter Cut-Off" class="btn border-info" name="cut-off" id="">
                     </td>
                 </tr>
             </table>

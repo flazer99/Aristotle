@@ -4,56 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Aladin&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
     <title>Final List of Selected Students</title>
 </head>
 
-
 <style>
     body {
-        height: 100vh;
-        width: 100vw;
-        background-color: aqua;
-        overflow: hidden;
+        text-align: center;
+        margin: 2rem;
+        background: #642B73;
+        background: -webkit-linear-gradient(to top, #C6426E, #642B73);
+        background: linear-gradient(to top, #C6426E, #642B73);
     }
-    
-    .main {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
+
+    .heading {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        padding-top: 8%;
+        padding-bottom: 8%;
+        background-color: white;
+    }
+
+    .btn {
+        margin-top: 3%;
         width: 100%;
-        align-items: center;
-        justify-content: center;
     }
-    
-    h1{
+
+    table {
+        margin: auto;
+        width: 50%;
+    }
+
+    td {
+        width: 10%;
+    }
+
+    button {
+        width: 50%;
+    }
+
+
+    input {
+        border-radius: 5%;
+        padding: 0.5rem;
+    }
+
+    table {
+        margin-top: 2rem;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    h1 {
         font-family: 'Aladin';
     }
 
-table, td, th {
-  border: 1px solid black;
-}
+    .tab,
+    .td,
+    .th {
+        border: 1px solid black;
+    }
 
-table {
-  border-collapse: collapse;
-  width: 50%;
-}
+    .tab {
+        border-collapse: collapse;
+        width: 50%;
+    }
 
-th {
-  height: 50px;
-}
-tr:hover {background-color: #f5f5f5;}
-        
+    .th {
+        height: 50px;
+    }
 
+    tr:hover {
+        background-color: #f5f5f5;
+        font-size: x-large;
+    }
 </style>
-
 <body>
-    <div class="main">
-        <h1 title is-size-1>Final List of Qualified Students</h1>
-        <table>
-            <tr>
+    <div class="container rounded heading">
+        <h2>Final List of Qualified Students</h2>
+        <table class="btn">
+            <tr class=" border">
                 <th>Name of student</th>
                 <th>College</th>
                 <th>Branch</th>
@@ -61,16 +105,16 @@ tr:hover {background-color: #f5f5f5;}
             {% for i in students %}
             <tr>
                 
-                <td>
+                <td class="border rounded border-info">
                     {{i[3]}}
 
                 </td>
 
-                <td>
+                <td class="border rounded border-warning">
                     {{i[0]}} 
                 </td>
 
-                <td>
+                <td class="border rounded border-danger">
                     {{i[1]}}
                 </td>
             </tr>

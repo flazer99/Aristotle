@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-</script>
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
     <title>View Current Cutoff</title>
 </head>
 <style>
-
-body {
+    body {
         text-align: center;
         margin: 2rem;
         background: #642B73;
@@ -37,20 +37,20 @@ body {
 
     .btn {
         margin-top: 3%;
-        width:100%;
+        width: 100%;
     }
 
-    table{
-        margin:auto;
+    table {
+        margin: auto;
         width: 50%;
     }
 
-    td{
-        width:10%;
+    td {
+        width: 10%;
     }
 
-    button{
-        width:50%;
+    button {
+        width: 50%;
     }
 
 
@@ -90,7 +90,8 @@ body {
     tr:hover {
         background-color: #f5f5f5;
     }
-    </style>
+</style>
+
 <body>
 
     <div class="heading container rounded">
@@ -101,59 +102,60 @@ body {
                     <td>College : </td>
                     <td>
                         <select class="btn border border-primary rounded" id="college" name="college">
-                            {% for x in college %}    
+                            {% for x in college %}
                             <option value="{{x}}">{{x}}</option>
                             {% endfor %}
-                            </select>      
-                    </td>  
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td>Branch : </td>
                     <td>
                         <select class="btn border border-primary rounded" id="branch" name="branch">
-                            {% for y in branch %}    
+                            {% for y in branch %}
                             <option value="{{y}}">{{y}}</option>
                             {% endfor %}
-                            </select>      
-                    </td>  
+                        </select>
+                    </td>
                 </tr>
             </table>
             <input type="submit" class="btn btn-outline-danger" name="" id="">
         </form>
         {% block content %}
-            {% if(ctr == 0) %}
-            {% else %}
-                <table class = "btn">
-                    <tr class="rounded border">
-                        <th>
-                            College
-                        </th>
-                        <th>
-                            Branch
-                        </th>
-                        <th>
-                            Current Cut-Off
-                        </th>
-                    </tr>
-                    <tr>
-                        <td class = "border rounded border-info">
-                            {{result[0]}}
-                        </td>
-                    
-                        <td class = "border rounded border-alert">
-                            {{result[1]}}
-                        </td>
-                      
-                        <td class = "border rounded border-warning">
-                            {{result[2]}}
-                        </td>
-                    </tr>
-                </table>
-            {% endif %}
+        {% if(ctr == 0) %}
+        {% else %}
+        <table class="btn">
+            <tr class="rounded border">
+                <th>
+                    College
+                </th>
+                <th>
+                    Branch
+                </th>
+                <th>
+                    Current Cut-Off
+                </th>
+            </tr>
+            <tr>
+                <td class="border rounded border-info">
+                    {{result[0]}}
+                </td>
+
+                <td class="border rounded border-warning">
+                    {{result[1]}}
+                </td>
+
+                <td class="border rounded border-danger">
+                    {{result[2]}}
+                </td>
+            </tr>
+        </table>
+        {% endif %}
         {% endblock content %}
         <a class="btn btn-outline-primary" href="{{ url_for('get_user_dashboard') }}">
             <strong>Dashboard</strong>
         </a>
     </div>
 </body>
+
 </html>
