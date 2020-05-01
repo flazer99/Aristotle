@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,25 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <title>Admin Login</title>
+    </script>
+    <title>Student Login</title>
 </head>
 
 <style>
-
     body {
-        height: 100vh;
-        width: 100vw;
-        background-color: aqua;
-        overflow: hidden;
+        text-align: center;
+        margin: 2rem;
+        background: #642B73;
+        background: -webkit-linear-gradient(to top, #C6426E, #642B73);
+        background: linear-gradient(to top, #C6426E, #642B73);
+        font-family: 'Montserrat', sans-serif; 
     }
-    
-    table
-    {
+
+    table {
         padding-top: calc(.4rem + 1vh);
     }
 
-    .navbar
-    {
+    .navbar {
         background: transparent;
     }
 
@@ -37,7 +38,7 @@
         align-items: center;
         justify-content: center;
     }
-    
+
     .button {
         padding: 0.5rem;
         margin: 0.5rem 1rem 0.5rem 0rem;
@@ -54,16 +55,17 @@
         padding: 0.5rem;
 
     }
-    
+
     a {
         color: black;
         text-decoration: none;
     }
-    
-    h1{
+
+    h1 {
         font-family: 'Montserrat', sans-serif;
+        color: white;
     }
-    </style>
+</style>
 
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -81,13 +83,14 @@
     </nav>
 
     <div class="outer">
-    <h1 class="title is-size-1 has-text-centered">User SignUp</h1>
+        <h1 class=" is-size-1 has-text-centered">Student Sign Up</h1>
         <div class=" inner">
             <form action="{{url_for('user_signup_register')}}" method="POST">
                 <div class="field">
                     <label class="label">Username:</label>
                     <div class="control has-icons-left ">
-                        <input class="input is-success is-medium" type="text" placeholder="Username here!" name="username">
+                        <input class="input is-success is-medium" type="text" placeholder="Username here!"
+                            name="username">
                         <span class="icon is-small is-left">
                             <i class="fas fa-envelope"></i>
                         </span>
@@ -97,8 +100,8 @@
                 <div class="field">
                     <label class="label">Password:</label>
                     <div class="control has-icons-left">
-                        <input class="input is-success is-medium" type="password" placeholder="Password here" name="password"
-                            name="password">
+                        <input class="input is-success is-medium" type="password" placeholder="Password here"
+                            name="password" name="password">
                         <span class="icon is-large is-left">
                             <i class="fas fa-lock"></i>
                         </span>
@@ -112,4 +115,5 @@
         </div>
     </div>
 </body>
+
 </html>

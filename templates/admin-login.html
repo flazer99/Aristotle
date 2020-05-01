@@ -12,12 +12,15 @@
 
 <style>
 
-    body {
-        height: 100vh;
-        width: 100vw;
-        background-color: aqua;
-        overflow: hidden;
+body {
+        text-align: center;
+        margin: 2rem;
+        background: #642B73;
+        background: -webkit-linear-gradient(to top, #C6426E, #642B73);
+        background: linear-gradient(to top, #C6426E, #642B73);
+        font-family: 'Montserrat', sans-serif; 
     }
+
     
     table
     {
@@ -63,6 +66,7 @@
     h1{
         /* font-family: 'Inconsolata', monospace; */
         font-family: 'Montserrat', sans-serif;
+        color:white;
     }
     </style>
 
@@ -82,7 +86,7 @@
     </nav>
 
     <div class="outer">
-    <h1 class="title is-size-1 has-text-centered">Admin Login</h1>
+    <h1 class=" is-size-1 has-text-centered">Admin Login</h1>
         <div class=" inner">
             <form action="http://localhost:5000/admin/login/check" method="POST">
                 <div class="field">
